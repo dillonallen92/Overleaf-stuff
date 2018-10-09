@@ -1,0 +1,164 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Calculus 2 Integrating Factor}
+\author{Dillon Allen }
+\date{October 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{Integrating Factor and Examples}
+First we will start off with the separable differential equation
+
+$$ \frac{dy}{dx} = \frac{5 cos\left(x\right)}{2y}$$
+
+Separate variables to get 
+
+$$ 2y dy = 5 cos\left(x \right) dx$$
+
+Integrating both sides we have:
+
+$$ y^2 = 5 sin  \left( x \right) + C $$
+
+Therefore
+
+$$ y = \pm \sqrt{ 5 sin \left( x \right) + C } $$
+
+That is the general solution to the separable differential equation shown above. But what happens if we encounter a differential equation of the form 
+$$ y' + 5xy = 2 x^2$$
+
+This differential equation isn't separable, so we need a new method to solving these. This method is called \textbf{integrating factor}. 
+
+The differential equation above is known as a first order linear differential equation. We have a 5 step process process for this.
+
+1) turn the differential equation into standard form
+
+standard form is of the form
+
+$$ y' + p\left(x\right)y = q\left(x\right) $$
+
+2) define your $p\left(x\right)$ and $q\left(x\right)$
+
+3) find the integrating factor, which is defined as
+
+$$ \mu\left(x\right) = \exp\left[\int p\left(x\right)dx\right]$$
+
+
+4) multiply $\mu$ through the equation in (1) and decompose the left hand side down to a product rule
+
+$$ \frac{d}{dx}\left[\mu\left(x\right)y\right] = \mu\left(x\right)q\left(x\right) $$
+
+5) The general solution of the differential equation is
+
+$$ y = \frac{1}{\mu\left(x\right)}\int \left[ \mu\left(x\right)q\left(x\right) + C\right]$$
+
+\textbf{Example}:
+
+Solve the differential equation 
+$$ xy' + y = x^2 + 1$$
+
+1) Putting into standard form we have 
+
+$$y' + \frac{1}{x}y = x + \frac{1}{x} $$
+
+2) Identify your $p\left(x\right)$ and $q\left(x\right)$
+
+$$ p\left(x\right) = \frac{1}{x} $$
+
+$$ q\left(x\right) = x + \frac{1}{x} $$
+
+3) find $\mu \left(x \right)$
+
+$$ \mu\left(x\right) = \exp\left[ \int \frac{1}{x} \mathrm{d}x \right] $$
+
+$$ \mu \left( x \right) = x $$
+
+4) Multiply $\mu \left( x \right)$ through and decompose
+
+$$ x y' + y = x^2 + 1 $$
+
+$$ \mathrm{d}\left[ x y \right] = \left( x^2 + 1 \right) \mathrm{d}x $$
+
+5) Integrating both sides, we get 
+
+$$ y = \frac{1}{x} \int \left( x^2 + 1 \right) \mathrm{d}x $$
+
+\begin{equation}
+\boxed{y = \frac{1}{3} x^2 + 1 + \frac{C}{x} }
+\end{equation}
+
+\newpage
+
+\textbf{Example}
+
+Solve the equation
+
+$$ y' + \frac{3}{x} y = \frac{e^x}{x^3} $$
+
+1) The equation is already in standard form so we do not need to do anything for step 1
+
+2) Identify $p \left( x \right)$ and $q \left( x \right)$
+
+$$ p \left( x \right) = \frac{3}{x}$$
+
+$$ q\left( x \right) = \frac{e^x}{x^3} $$ 
+
+
+3) Find $\mu \left( x \right)$
+
+$$ \mu \left( x \right) = \exp\left[ \int \frac{3}{x} \mathrm{d}x \right]$$
+
+$$ \mu \left( x \right) = x^3 $$ 
+
+4) Multiply through and decompose
+
+$$ x^3 y' + 3x^2y = e^x $$
+
+$$ \mathrm{d}\left[ x^3 y \right] = e^x \mathrm{d}x $$
+
+5) Integrating both sides and solving for $y$, we get
+
+$$ x^3y = e^x + C $$
+\begin{equation}
+ \boxed{y = \frac{e^x + C}{x^3}}
+\end{equation}
+\textbf{Example}
+
+Sovle the following differential equation
+
+$$ \left( x + 1 \right) y' - 3 y = \left( x + 1 \right)^5 $$ 
+
+1) Putting into standard form, we have 
+
+$$ y' - \frac{3}{x+1} = \left( x + 1 \right)^4 $$ 
+
+2) Identify $ p\left(x\right) $ and $ q\left(x\right) $
+
+$$ p\left(x\right) = \frac{-3}{x+1} $$
+
+$$ q\left(x \right) = \left(x+1\right)^4 $$
+
+3) Find $ \mu\left( x \right) $
+
+$$ \mu \left( x \right) = \exp\left[ \int \frac{-3}{x+1} \mathrm{d}x \right] $$
+
+$$ \mu \left( x \right) = \left( x + 1 \right) ^{-3} $$
+
+4) Multiply through and decompose
+
+$$ \left( x + 1 \right)^{-3}y' - 3 \left( x + 1 \right)^{-4} = x + 1 $$
+
+$$ \mathrm{d}\left[ \left( x + 1 \right)^{-3} y \right] = \left( x + 1 \right) \mathrm{d}x $$
+
+5) Integrate both sides and solving for y, we get 
+
+\begin{equation}
+    \boxed{y = \left( x + 1 \right)^{3}\left( \frac{1}{2}x^2 + x + C \right)}
+\end{equation}
+
+\section{Derivation}
+
+\end{document}
